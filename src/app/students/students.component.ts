@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+import {Student} from '../Student';
+import {StudentsService} from '../students.service';
+
+@Component({
+  selector: 'app-students',
+  templateUrl: './students.component.html',
+  styleUrls: ['./students.component.css']
+})
+export class StudentsComponent implements OnInit {
+  students: Student[];
+
+  constructor(private studentService: StudentsService) { }
+
+  ngOnInit() {
+    this.getStudents();
+  }
+
+  //ham lay ve tat ca cac student tu api
+  getStudents(): void {
+    this.studentService.getStudents().subscribe(data => this.students = data)
+  }
+}
