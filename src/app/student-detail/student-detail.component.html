@@ -1,0 +1,19 @@
+<div *ngIf="student">
+
+  <h2>{{student.name | uppercase}} details</h2>
+
+  <div>
+    <label>Name:</label>
+    <input [(ngModel)]="student.name" placeholder="name">
+  </div>
+  <div>
+    <label>Age:</label>
+    <input [(ngModel)]="student.age" placeholder="age">
+  </div>
+  <div>
+    <label>Gender:</label>
+    <input [(ngModel)]="student.gender" placeholder="gender">
+  </div>
+  <button class="btn btn-outline-success" (click)="save()">Save</button>
+  <button class="btn" (click)="goBack()">Go back</button>
+</div>
