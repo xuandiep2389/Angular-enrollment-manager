@@ -6,19 +6,22 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { StudentsComponent } from './students/students.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AddStudentComponent } from './add-student/add-student.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentsComponent,
-    StudentDetailComponent
+    StudentDetailComponent,
+    AddStudentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

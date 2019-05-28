@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="addStudentForm">
+      <div class="form-group">
+        <label class="col-md-4">Name</label>
+        <input type="text" class="form-control" formControlName="name">
+      </div>
+      <div *ngIf="addStudentForm.controls['name'].invalid && (addStudentForm.controls['name'].dirty || addStudentForm.controls['name'].touched)" class="alert alert-danger">
+        <div *ngIf="addStudentForm.controls['name'].errors.required">
+          Name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4">Age </label>
+        <input type="text" class="form-control" formControlName="age">
+      </div>
+      <div *ngIf="addStudentForm.controls['age'].invalid && (addStudentForm.controls['age'].dirty || addStudentForm.controls['age'].touched)" class="alert alert-danger">
+        <div *ngIf="addStudentForm.controls['age'].errors.required">
+          Age is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4">Gender</label>
+        <input type="text" class="form-control" formControlName="gender">
+      </div>
+      <div *ngIf="addStudentForm.controls['gender'].invalid && (addStudentForm.controls['gender'].dirty || addStudentForm.controls['gender'].touched)" class="alert alert-danger">
+        <div *ngIf="addStudentForm.controls['gender'].errors.required">
+          Gender is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-outline-success" [disabled]="addStudentForm.pristine || addStudentForm.invalid" (click)="add()">Add</button>
+      </div>
+    </form>
+  </div>
+</div>
+
