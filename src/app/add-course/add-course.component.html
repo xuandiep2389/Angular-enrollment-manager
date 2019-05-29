@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="addCourseForm">
+      <div class="form-group">
+        <label class="col-md-4">Name</label>
+        <input type="text" class="form-control" formControlName="name">
+      </div>
+      <div *ngIf="addCourseForm.controls['name'].invalid && (addCourseForm.controls['name'].dirty || addCourseForm.controls['name'].touched)" class="alert alert-danger">
+        <div *ngIf="addCourseForm.controls['name'].errors.required">
+          Course name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4">Description </label>
+        <input type="text" class="form-control" formControlName="description">
+      </div>
+      <div *ngIf="addCourseForm.controls['description'].invalid && (addCourseForm.controls['description'].dirty || addCourseForm.controls['description'].touched)" class="alert alert-danger">
+        <div *ngIf="addCourseForm.controls['description'].errors.required">
+          Description is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-outline-success" [disabled]="addCourseForm.pristine || addCourseForm.invalid" (click)="add()">Add</button>
+      </div>
+    </form>
+  </div>
+</div>
+

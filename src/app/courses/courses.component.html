@@ -1,0 +1,15 @@
+<div class="container">
+  <table class="table">
+    <tr>
+      <td>Name</td>
+      <td>Description</td>
+    </tr>
+    <tr *ngFor="let c of courses">
+      <td>{{c.name}}</td>
+      <td>{{c.description}}</td>
+      <td><a class="btn btn-outline-info" routerLink="/courses/detail/{{c.id}}">Edit</a></td>
+      <td><button class="btn btn-outline-danger" (click)="delete(c)">Delete</button></td>
+    </tr>
+  </table>
+  <a routerLink="/courses/add">Add course</a>
+</div>

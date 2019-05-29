@@ -8,13 +8,19 @@ import { StudentsComponent } from './students/students.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AddStudentComponent } from './add-student/add-student.component';
+import { CoursesComponent } from './courses/courses.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { AddCourseComponent } from './add-course/add-course.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentsComponent,
     StudentDetailComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    CoursesComponent,
+    CourseDetailComponent,
+    AddCourseComponent
   ],
   imports: [
     BrowserModule,
