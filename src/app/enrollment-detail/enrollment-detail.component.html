@@ -1,0 +1,41 @@
+<div *ngIf="enrollment">
+
+  <div class="card">
+    <div class="card-body">
+        <div class="form-group">
+          <label class="col-md-4">Student</label>
+          <select class="form-control" [(ngModel)]="enrollment.student">
+            <option *ngFor="let s of students" [ngValue]="s">
+              {{s.name}}
+            </option>
+          </select>
+        </div>
+
+
+        <div class="form-group">
+          <label class="col-md-4">Course</label>
+          <select class="form-control" [(ngModel)]="enrollment.course">
+            <option *ngFor="let c of courses" [ngValue]="c">
+              {{c.name}}
+            </option>
+          </select>
+        </div>
+
+
+        <div class="form-group">
+          <label class="col-md-4">Fee</label>
+          <input type="text" class="form-control" [(ngModel)]="enrollment.fee">
+        </div>
+
+
+      <div class="form-group">
+        <button class="btn btn-outline-success" (click)="save()">Save</button>
+        &nbsp;
+        <button class="btn btn-outline-primary" (click)="goBack()">Go back</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
