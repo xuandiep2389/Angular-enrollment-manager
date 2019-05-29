@@ -1,0 +1,19 @@
+<div class="container">
+  <table class="table">
+    <tr>
+      <td>Student Name</td>
+      <td>Course Name</td>
+      <td>Start date</td>
+      <td>End date</td>
+      <td>Fee</td>
+    </tr>
+    <tr *ngFor="let e of enrollments">
+      <td>{{e.student.name}}</td>
+      <td>{{e.course.name}}</td>
+      <td>{{e.startDate | date}}</td>
+      <td>{{e.endDate | date}}</td>
+      <td>{{e.fee}}</td>
+      <td><button class="btn btn-outline-danger" (click)="delete(e)">Delete</button></td>
+    </tr>
+  </table>
+</div>
