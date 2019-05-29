@@ -1,11 +1,13 @@
 <div class="container">
   <table class="table">
-    <tr>
+    <tr class="table-title">
+      <td>Student ID</td>
       <td>Name</td>
       <td>Age</td>
       <td>Gender</td>
     </tr>
     <tr *ngFor="let s of students">
+      <td>{{s.id}}</td>
       <td>{{s.name}}</td>
       <td>{{s.age}}</td>
       <td>{{s.gender}}</td>

@@ -1,10 +1,12 @@
 <div class="container">
-  <table class="table">
-    <tr>
+  <table class="table" >
+    <tr class="table-title">
+      <td>Course</td>
       <td>Name</td>
       <td>Description</td>
     </tr>
     <tr *ngFor="let c of courses">
+      <td>{{c.id}}</td>
       <td>{{c.name}}</td>
       <td>{{c.description}}</td>
       <td><a class="btn btn-outline-info" routerLink="/courses/detail/{{c.id}}">Edit</a></td>

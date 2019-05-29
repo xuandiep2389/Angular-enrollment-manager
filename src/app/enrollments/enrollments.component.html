@@ -1,6 +1,7 @@
 <div class="container">
-  <table class="table">
-    <tr>
+  <table class="table" >
+    <tr class="table-title">
+      <td>Enrollment ID</td>
       <td>Student</td>
       <td>Course</td>
       <td>Start date</td>
@@ -8,11 +9,13 @@
       <td>Fee</td>
     </tr>
     <tr *ngFor="let e of enrollments">
+      <td>{{e.id}}</td>
       <td>{{e.student.name}}</td>
       <td>{{e.course.name}}</td>
       <td>{{e.startDate | date:'medium' }}</td>
       <td>{{e.endDate | date:'medium'}}</td>
       <td>{{e.fee}}</td>
+      <td><a class="btn btn-outline-info" routerLink="/enrollments/detail/{{e.id}}">Edit</a></td>
       <td><button class="btn btn-outline-danger" (click)="delete(e)">Delete</button></td>
     </tr>
   </table>

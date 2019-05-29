@@ -29,7 +29,8 @@ export class AddEnrollmentComponent implements OnInit {
 
   ngOnInit() {
     this.getStudents();
-    this.getCourses()
+    this.getCourses();
+    this.getEnrollments()
   }
 
   //ham lay ve tat ca cac student tu api
@@ -80,4 +81,7 @@ export class AddEnrollmentComponent implements OnInit {
 
   now = new Date();
 
+  getEnrollments(): void {
+    this.enrollmentService.getEnrollments().subscribe(data=> this.enrollments = data)
+  }
 }

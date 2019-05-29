@@ -43,6 +43,24 @@ export class EnrollmentService {
     );
   }
 
+  //get a enrollment from api
+  getEnrollment(id: number): Observable<Enrollment> {
+    const url = `${this.enrollmentURL}/${id}`;
+    return this.http.get<Enrollment>(url).pipe(
+      catchError(this.handleError<Enrollment>(`getEnrollment id=${id}`))
+    )
+  }
+
+  // PATCH: update the enrollment on the server
+  updateEnrollment(enrollment: Enrollment | number): Observable<any> {
+    const id = typeof enrollment === 'number'? enrollment: enrollment.id;
+    const url = `${this.enrollmentURL}/${id}`;
+
+    return this.http.patch(url,enrollment, httpOptions).pipe(
+      catchError(this.handleError<any>('updateEnrollment'))
+    )
+  }
+
 
 
   /**
