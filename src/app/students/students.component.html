@@ -11,9 +11,13 @@
       <td>{{s.name}}</td>
       <td>{{s.age}}</td>
       <td>{{s.gender}}</td>
+
+
+      <td><a class="btn btn-outline-warning" routerLink="/students/view/{{s.id}}">View</a></td>
       <td><a class="btn btn-outline-info" routerLink="/students/detail/{{s.id}}">Edit</a></td>
       <td><button class="btn btn-outline-danger" (click)="delete(s)">Delete</button></td>
     </tr>
   </table>
   <a routerLink="/students/add">Add student</a>
 </div>
+

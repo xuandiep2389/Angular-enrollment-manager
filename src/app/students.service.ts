@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {Student} from './Student';
 import {catchError} from 'rxjs/operators';
+import {Enrollment} from './Enrollment';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type' : 'application/json'})
@@ -16,6 +17,8 @@ export class StudentsService {
   constructor(private http: HttpClient) { }
 
   private studentURL = 'http://localhost:8080/students';
+  private enrollmentURL = 'http://localhost:8080/enrollments';
+
 
   //get all students from api
   getStudents(): Observable<Student[]> {
@@ -60,6 +63,14 @@ export class StudentsService {
     )
   }
 
+  // GET: get all the enrollment with student id
+  getEnrollmentByStudentId(student: Student | number): Observable<Enrollment[]> {
+    const id = typeof student === 'number'? student: student.id;
+    const url = `http://localhost:8080/findEnrollmentByStudentId/${id}`;
+    return this.http.get<Enrollment[]>(url).pipe(
+      catchError(this.handleError('Get enrollment by studentId', []))
+    )
+  }
 
 
   /**

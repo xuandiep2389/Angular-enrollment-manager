@@ -1,0 +1,58 @@
+<div *ngIf="student">
+
+  <div class="card" style="text-align: center">
+
+    <div class="card-header">
+      <h2>{{student.name}} details </h2>
+    </div>
+
+    <div class="card-body">
+      <div class="container">
+        <table class="table table-borderless">
+          <tr>
+            <td style="font-weight: bold">Name:</td>
+            <td>{{student.name}}</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Age: </td>
+            <td>{{student.age}}</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Gender:</td>
+            <td>{{student.gender}}</td>
+          </tr>
+        </table>
+        <br>
+        <br>
+
+        <h3 class="card-title">
+          {{student.name}}'s enrollment
+        </h3>
+
+        <table class="table table-borderless">
+          <tr class="table-title">
+            <td>Enrollment ID</td>
+            <td>Student</td>
+            <td>Course</td>
+            <td>Start date</td>
+            <td>End date</td>
+            <td>Fee</td>
+          </tr>
+          <tr *ngFor="let e of enrollmentResult">
+            <td>{{e.id}}</td>
+            <td>{{e.student.name}}</td>
+            <td>{{e.course.name}}</td>
+            <td>{{e.startDate | date:'medium' }}</td>
+            <td>{{e.endDate | date:'medium'}}</td>
+            <td>{{e.fee}}</td>
+        </table>
+
+        <div>&nbsp;
+          <button class="btn btn-outline-primary" (click)="goBack()">Go back</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

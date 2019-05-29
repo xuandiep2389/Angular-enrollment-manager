@@ -9,6 +9,7 @@ import {CourseDetailComponent} from './course-detail/course-detail.component';
 import {EnrollmentsComponent} from './enrollments/enrollments.component';
 import {AddEnrollmentComponent} from './add-enrollment/add-enrollment.component';
 import {EnrollmentDetailComponent} from './enrollment-detail/enrollment-detail.component';
+import {ViewStudentComponent} from './view-student/view-student.component';
 
 const routes: Routes = [
   {path: 'students', component: StudentsComponent},
@@ -20,6 +21,8 @@ const routes: Routes = [
   {path: 'enrollments', component: EnrollmentsComponent},
   {path: 'enrollments/add', component: AddEnrollmentComponent},
   {path: 'enrollments/detail/:id', component: EnrollmentDetailComponent},
+  {path: 'students/view/:id', component: ViewStudentComponent},
+
 ];
 
 @NgModule({
