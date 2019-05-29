@@ -7,6 +7,7 @@ import {CoursesComponent} from './courses/courses.component';
 import {AddCourseComponent} from './add-course/add-course.component';
 import {CourseDetailComponent} from './course-detail/course-detail.component';
 import {EnrollmentsComponent} from './enrollments/enrollments.component';
+import {AddEnrollmentComponent} from './add-enrollment/add-enrollment.component';
 
 const routes: Routes = [
   {path: 'students', component: StudentsComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'courses/add', component: AddCourseComponent},
   {path: 'courses/detail/:id', component: CourseDetailComponent},
   {path: 'enrollments', component: EnrollmentsComponent},
+  {path: 'enrollments/add', component: AddEnrollmentComponent},
 ];
 
 @NgModule({

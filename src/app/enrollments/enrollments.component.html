@@ -1,8 +1,8 @@
 <div class="container">
   <table class="table">
     <tr>
-      <td>Student Name</td>
-      <td>Course Name</td>
+      <td>Student</td>
+      <td>Course</td>
       <td>Start date</td>
       <td>End date</td>
       <td>Fee</td>
@@ -10,10 +10,11 @@
     <tr *ngFor="let e of enrollments">
       <td>{{e.student.name}}</td>
       <td>{{e.course.name}}</td>
-      <td>{{e.startDate | date}}</td>
-      <td>{{e.endDate | date}}</td>
+      <td>{{e.startDate | date:'medium' }}</td>
+      <td>{{e.endDate | date:'medium'}}</td>
       <td>{{e.fee}}</td>
       <td><button class="btn btn-outline-danger" (click)="delete(e)">Delete</button></td>
     </tr>
   </table>
+  <a routerLink="/enrollments/add">Add enrollment</a>
 </div>

@@ -18,15 +18,15 @@ export class EnrollmentService {
 
   private enrollmentURL = 'http://localhost:8080/enrollments';
 
-  //get all courses from api
+  //get all enrollments from api
   getEnrollments(): Observable<Enrollment[]> {
     return this.http.get<Enrollment[]>(this.enrollmentURL)
       .pipe(
-        catchError(this.handleError('getCourses', []))
+        catchError(this.handleError('getEnrollment', []))
       )
   }
 
-  // DELETE: delete course from server
+  // DELETE: delete enrollment from server
   deleteEnrollment(enrollment: Enrollment | number ): Observable<Enrollment> {
     const id = typeof enrollment === 'number'? enrollment: enrollment.id;
     const url = `${this.enrollmentURL}/${id}`;
@@ -36,6 +36,12 @@ export class EnrollmentService {
     )
   }
 
+  // POST: add enrollment to server
+  addEnrollment(enrollment: Enrollment): Observable<Enrollment> {
+    return this.http.post<Enrollment>(this.enrollmentURL,enrollment,httpOptions).pipe(
+      catchError(this.handleError<Enrollment>('addEnrollment'))
+    );
+  }
 
 
 
