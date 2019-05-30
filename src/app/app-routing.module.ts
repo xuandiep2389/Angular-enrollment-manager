@@ -13,6 +13,7 @@ import {ViewStudentComponent} from './view-student/view-student.component';
 import {ViewCourseComponent} from './view-course/view-course.component';
 
 const routes: Routes = [
+  {path: '', redirectTo:'/students', pathMatch: 'full'},
   {path: 'students', component: StudentsComponent},
   {path: 'students/detail/:id', component: StudentDetailComponent},
   {path: 'students/add', component: AddStudentComponent},
@@ -24,7 +25,6 @@ const routes: Routes = [
   {path: 'enrollments/detail/:id', component: EnrollmentDetailComponent},
   {path: 'students/view/:id', component: ViewStudentComponent},
   {path: 'courses/view/:id', component: ViewCourseComponent},
-
 ];
 
 @NgModule({
