@@ -48,8 +48,8 @@ export class AddEnrollmentComponent implements OnInit {
     this.addEnrollmentForm = this.fb.group({
       student: [new Student, Validators.required],
       course: [new Course,Validators.required],
-      startDate: this.now,
-      endDate: new Date(this.now.getTime()+ 1440*60000),
+      startDate: new Date,
+      endDate: new Date,
       fee: ['', Validators.required]
     })
   }
@@ -64,8 +64,8 @@ export class AddEnrollmentComponent implements OnInit {
           {
             student: [new Student, Validators.required],
             course: [new Course,Validators.required],
-            startDate: this.now,
-            endDate: new Date(this.now.getTime()+ 1440*60000),
+            startDate: new Date,
+            endDate: new Date,
             fee: ['', Validators.required]
           }
         )

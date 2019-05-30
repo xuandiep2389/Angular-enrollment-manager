@@ -2,30 +2,40 @@
 
   <div class="card">
     <div class="card-body">
-        <div class="form-group">
-          <label class="col-md-4">Student</label>
-          <select class="form-control" [(ngModel)]="enrollment.student">
-            <option *ngFor="let s of students" [ngValue]="s">
-              {{s.name}}
-            </option>
-          </select>
-        </div>
+      <div class="form-group">
+        <label class="col-md-4">Student</label>
+        <select class="form-control" [(ngModel)]="enrollment.student">
+          <option *ngFor="let s of students" [ngValue]="s">
+            {{s.name}}
+          </option>
+        </select>
+      </div>
 
 
-        <div class="form-group">
-          <label class="col-md-4">Course</label>
-          <select class="form-control" [(ngModel)]="enrollment.course">
-            <option *ngFor="let c of courses" [ngValue]="c">
-              {{c.name}}
-            </option>
-          </select>
-        </div>
+      <div class="form-group">
+        <label class="col-md-4">Course</label>
+        <select class="form-control" [(ngModel)]="enrollment.course">
+          <option *ngFor="let c of courses" [ngValue]="c">
+            {{c.name}}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4">Start date</label>
+        <input type="date" class="form-control" [(ngModel)]="enrollment.startDate">
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4">End date</label>
+        <input type="date" class="form-control" [(ngModel)]="enrollment.endDate">
+      </div>
 
 
-        <div class="form-group">
-          <label class="col-md-4">Fee</label>
-          <input type="text" class="form-control" [(ngModel)]="enrollment.fee">
-        </div>
+      <div class="form-group">
+        <label class="col-md-4">Fee</label>
+        <input type="text" class="form-control" [(ngModel)]="enrollment.fee">
+      </div>
 
 
       <div class="form-group">

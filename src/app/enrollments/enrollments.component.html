@@ -12,7 +12,7 @@
       <td>End date</td>
       <td>Fee</td>
     </tr>
-    <tr *ngFor="let e of enrollments | filter:searchText  ">
+    <tr *ngFor="let e of enrollments | filter:searchText">
       <td>{{e.id}}</td>
       <td>{{e.student.name}}</td>
       <td>{{e.course.name}}</td>
