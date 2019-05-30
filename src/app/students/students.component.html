@@ -10,7 +10,7 @@
       <td>Age</td>
       <td>Gender</td>
     </tr>
-    <tr *ngFor="let s of students | filter:searchText">
+    <tr *ngFor="let s of students | filter:searchText | paginate: config">
       <td>{{s.id}}</td>
       <td>{{s.name}}</td>
       <td>{{s.age}}</td>
@@ -22,6 +22,8 @@
       <td><button class="btn btn-outline-danger" (click)="delete(s)">Delete</button></td>
     </tr>
   </table>
+  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+  <br>
   <a class="btn btn-outline-secondary" routerLink="/students/add">Add student</a>
 </div>
 

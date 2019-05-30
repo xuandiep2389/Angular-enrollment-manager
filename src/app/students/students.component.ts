@@ -10,7 +10,17 @@ import {StudentsService} from '../students.service';
 export class StudentsComponent implements OnInit {
   students: Student[];
 
-  constructor(private studentService: StudentsService) { }
+  searchText;
+
+  config: any;
+
+  constructor(private studentService: StudentsService) {
+
+    this.config = {
+      itemsPerPage: 4,
+      currentPage: 1,
+    };
+  }
 
   ngOnInit() {
     this.getStudents();
@@ -24,5 +34,9 @@ export class StudentsComponent implements OnInit {
   delete(student: Student):void {
     this.students = this.students.filter(s => s !== student);
     this.studentService.deleteStudent(student).subscribe()
+  }
+
+  pageChanged(event) {
+    this.config.currentPage = event;
   }
 }

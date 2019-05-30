@@ -17,6 +17,7 @@ import { EnrollmentDetailComponent } from './enrollment-detail/enrollment-detail
 import { ViewStudentComponent } from './view-student/view-student.component';
 import { ViewCourseComponent } from './view-course/view-course.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgxPaginationModule
 
   ],
   providers: [],
