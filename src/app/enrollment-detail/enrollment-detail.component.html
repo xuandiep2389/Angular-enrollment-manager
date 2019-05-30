@@ -5,6 +5,8 @@
       <div class="form-group">
         <label class="col-md-4">Student</label>
         <select class="form-control" [(ngModel)]="enrollment.student">
+          <option [ngValue]="enrollment.student" selected="selected">{{enrollment.student.name}}
+          </option>
           <option *ngFor="let s of students" [ngValue]="s" selected="selected">
             {{s.name}}
           </option>
@@ -14,6 +16,8 @@
       <div class="form-group">
         <label class="col-md-4">Course</label>
         <select class="form-control" [(ngModel)]="enrollment.course">
+          <option [ngValue]="enrollment.course" selected="selected">{{enrollment.course.name}}
+          </option>
           <option *ngFor="let c of courses" [ngValue]="c">
             {{c.name}}
           </option>
