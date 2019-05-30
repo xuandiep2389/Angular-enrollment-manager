@@ -16,6 +16,7 @@ import { AddEnrollmentComponent } from './add-enrollment/add-enrollment.componen
 import { EnrollmentDetailComponent } from './enrollment-detail/enrollment-detail.component';
 import { ViewStudentComponent } from './view-student/view-student.component';
 import { ViewCourseComponent } from './view-course/view-course.component';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ViewCourseComponent } from './view-course/view-course.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
 
   ],
   providers: [],

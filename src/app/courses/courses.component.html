@@ -1,11 +1,15 @@
 <div class="container">
+  <br>
+  <div class="form-group">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
+  </div>
   <table class="table" >
     <tr class="table-title">
       <td>Course</td>
       <td>Name</td>
       <td>Description</td>
     </tr>
-    <tr *ngFor="let c of courses">
+    <tr *ngFor="let c of courses | filter:searchText">
       <td>{{c.id}}</td>
       <td>{{c.name}}</td>
       <td>{{c.description}}</td>

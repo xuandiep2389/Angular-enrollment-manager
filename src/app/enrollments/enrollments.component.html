@@ -1,4 +1,8 @@
 <div class="container">
+  <br>
+  <div class="form-group">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
+  </div>
   <table class="table" >
     <tr class="table-title">
       <td>Enrollment ID</td>
@@ -8,7 +12,7 @@
       <td>End date</td>
       <td>Fee</td>
     </tr>
-    <tr *ngFor="let e of enrollments">
+    <tr *ngFor="let e of enrollments | filter:searchText  ">
       <td>{{e.id}}</td>
       <td>{{e.student.name}}</td>
       <td>{{e.course.name}}</td>
