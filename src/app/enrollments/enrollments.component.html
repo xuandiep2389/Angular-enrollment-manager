@@ -5,7 +5,6 @@
   </div>
   <table class="table" >
     <tr class="table-title">
-      <td>Enrollment ID</td>
       <td>Student</td>
       <td>Course</td>
       <td>Start date</td>
@@ -13,7 +12,6 @@
       <td>Fee</td>
     </tr>
     <tr *ngFor="let e of enrollments | filter:searchText">
-      <td>{{e.id}}</td>
       <td>{{e.student.name}}</td>
       <td>{{e.course.name}}</td>
       <td>{{e.startDate | date:'medium' }}</td>
