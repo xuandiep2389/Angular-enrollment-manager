@@ -26,7 +26,11 @@
 
         <div class="form-group">
           <label class="col-md-4">Gender</label>
-          <input type="text" class="form-control" formControlName="gender">
+          <div class="form-control ">
+            <label class="radio-inline"><input type="radio" formControlName="gender" value="female">Female</label>&nbsp;&nbsp;
+            <label class="radio-inline"><input type="radio" formControlName="gender" value="male">Male</label>&nbsp;&nbsp;
+            <label class="radio-inline"><input type="radio" formControlName="gender" value="other">Other</label>
+          </div>
         </div>
         <div *ngIf="addStudentForm.controls['gender'].invalid && (addStudentForm.controls['gender'].dirty || addStudentForm.controls['gender'].touched)" class="alert alert-danger">
           <div *ngIf="addStudentForm.controls['gender'].errors.required">
