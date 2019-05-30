@@ -1,32 +1,29 @@
-<div class="container" *ngIf="student">
+<div class="container" *ngIf="course">
 
   <div class="card" style="text-align: center">
 
     <div class="card-header">
-      <h2>{{student.name}} details </h2>
+      <h2>{{course.name}} details </h2>
     </div>
 
     <div class="card-body">
 
       <table class="table table-borderless">
         <tr>
-          <td style="font-weight: bold">Name:</td>
-          <td>{{student.name}}</td>
+          <td style="font-weight: bold">Course:</td>
+          <td>{{course.name}}</td>
         </tr>
         <tr>
-          <td style="font-weight: bold">Age:</td>
-          <td>{{student.age}}</td>
+          <td style="font-weight: bold">Description:</td>
+          <td>{{course.description}}</td>
         </tr>
-        <tr>
-          <td style="font-weight: bold">Gender:</td>
-          <td>{{student.gender}}</td>
-        </tr>
+
       </table>
       <br>
       <br>
 
       <h3 class="card-title">
-        {{student.name}}'s enrollment
+        Students register to {{course.name}}
       </h3>
 
       <table class="table table-borderless">

@@ -23,7 +23,7 @@ export class ViewStudentComponent implements OnInit {
 
   ngOnInit() {
     this.getStudent();
-    this.getEnrollments()
+    this.getEnrollmentsByStudentId()
   }
 
   getStudent(): void {
@@ -32,7 +32,7 @@ export class ViewStudentComponent implements OnInit {
       .subscribe(s => this.student = s)
   }
 
-  getEnrollments(): void {
+  getEnrollmentsByStudentId(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.studentService.getEnrollmentByStudentId(id).subscribe(data=> this.enrollmentResult = data)
   }

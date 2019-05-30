@@ -15,6 +15,7 @@ import { EnrollmentsComponent } from './enrollments/enrollments.component';
 import { AddEnrollmentComponent } from './add-enrollment/add-enrollment.component';
 import { EnrollmentDetailComponent } from './enrollment-detail/enrollment-detail.component';
 import { ViewStudentComponent } from './view-student/view-student.component';
+import { ViewCourseComponent } from './view-course/view-course.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ViewStudentComponent } from './view-student/view-student.component';
     EnrollmentsComponent,
     AddEnrollmentComponent,
     EnrollmentDetailComponent,
-    ViewStudentComponent
+    ViewStudentComponent,
+    ViewCourseComponent
   ],
   imports: [
     BrowserModule,

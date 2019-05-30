@@ -9,6 +9,8 @@
       <td>{{c.id}}</td>
       <td>{{c.name}}</td>
       <td>{{c.description}}</td>
+
+      <td><a class="btn btn-outline-warning" routerLink="/courses/view/{{c.id}}">View</a></td>
       <td><a class="btn btn-outline-info" routerLink="/courses/detail/{{c.id}}">Edit</a></td>
       <td><button class="btn btn-outline-danger" (click)="delete(c)">Delete</button></td>
     </tr>

@@ -1,58 +1,64 @@
-<div class="card">
-  <div class="card-body">
-    <form [formGroup]="addEnrollmentForm">
-      <div class="form-group">
-        <label class="col-md-4">Student</label>
-        <select class="form-control" formControlName="student">
-          <option *ngFor="let s of students" [ngValue]="s">
-            {{s.name}}
-          </option>
-        </select>
-      </div>
-      <div
-        *ngIf="addEnrollmentForm.controls['student'].invalid && (addEnrollmentForm.controls['student'].dirty || addEnrollmentForm.controls['student'].touched)"
-        class="alert alert-danger">
-        <div *ngIf="addEnrollmentForm.controls['student'].errors.required">
-          Student is required.
+<div class="container">
+
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="addEnrollmentForm">
+
+        <div class="form-group">
+          <label class="col-md-4">Student</label>
+          <select class="form-control" formControlName="student">
+            <option *ngFor="let s of students" [ngValue]="s">
+              {{s.name}}
+            </option>
+          </select>
         </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-md-4">Course</label>
-        <select class="form-control" formControlName="course">
-          <option *ngFor="let c of courses" [ngValue]="c">
-            {{c.name}}
-          </option>
-        </select>
-      </div>
-      <div
-        *ngIf="addEnrollmentForm.controls['course'].invalid && (addEnrollmentForm.controls['course'].dirty || addEnrollmentForm.controls['course'].touched)"
-        class="alert alert-danger">
-        <div *ngIf="addEnrollmentForm.controls['course'].errors.required">
-          Course is required.
+        <div
+          *ngIf="addEnrollmentForm.controls['student'].invalid && (addEnrollmentForm.controls['student'].dirty || addEnrollmentForm.controls['student'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="addEnrollmentForm.controls['student'].errors.required">
+            Student is required.
+          </div>
         </div>
-      </div>
 
-
-
-      <div class="form-group">
-        <label class="col-md-4">Fee</label>
-        <input type="text" class="form-control" formControlName="fee">
-      </div>
-      <div
-        *ngIf="addEnrollmentForm.controls['fee'].invalid && (addEnrollmentForm.controls['fee'].dirty || addEnrollmentForm.controls['fee'].touched)"
-        class="alert alert-danger">
-        <div *ngIf="addEnrollmentForm.controls['fee'].errors.required">
-          Fee is required.
+        <div class="form-group">
+          <label class="col-md-4">Course</label>
+          <select class="form-control" formControlName="course">
+            <option *ngFor="let c of courses" [ngValue]="c">
+              {{c.name}}
+            </option>
+          </select>
         </div>
-      </div>
+        <div
+          *ngIf="addEnrollmentForm.controls['course'].invalid && (addEnrollmentForm.controls['course'].dirty || addEnrollmentForm.controls['course'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="addEnrollmentForm.controls['course'].errors.required">
+            Course is required.
+          </div>
+        </div>
 
-      <div class="form-group">
-        <button type="submit" class="btn btn-outline-success"
-                [disabled]="addEnrollmentForm.pristine || addEnrollmentForm.invalid" (click)="add()">Add
-        </button>
-      </div>
-    </form>
+
+
+        <div class="form-group">
+          <label class="col-md-4">Fee</label>
+          <input type="text" class="form-control" formControlName="fee">
+        </div>
+        <div
+          *ngIf="addEnrollmentForm.controls['fee'].invalid && (addEnrollmentForm.controls['fee'].dirty || addEnrollmentForm.controls['fee'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="addEnrollmentForm.controls['fee'].errors.required">
+            Fee is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-outline-success"
+                  [disabled]="addEnrollmentForm.pristine || addEnrollmentForm.invalid" (click)="add()">Add
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
 
+
+
+</div>

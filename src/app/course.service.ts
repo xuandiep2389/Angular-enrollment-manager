@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Course} from './Course';
 import {Observable, of} from 'rxjs';
 import {catchError} from 'rxjs/operators';
+import {Enrollment} from './Enrollment';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type' : 'application/json'})
@@ -60,7 +61,14 @@ export class CourseService {
     )
   }
 
-
+  // GET: get all the enrollment with course id
+  getEnrollmentByCourseId(course: Course | number): Observable<Enrollment[]> {
+    const id = typeof course === 'number'? course: course.id;
+    const url = `http://localhost:8080/findEnrollmentByCourseId/${id}`;
+    return this.http.get<Enrollment[]>(url).pipe(
+      catchError(this.handleError('Get enrollment by courseId', []))
+    )
+  }
 
   /**
    * Handle Http operation that failed.
