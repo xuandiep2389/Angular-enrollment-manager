@@ -9,8 +9,11 @@ import {Student} from '../Student';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent implements OnInit {
+  searchText;
   courses: Course[];
   config: any;
+
+  courseDelete: Course;
 
   constructor(private courseService: CourseService) {
     this.config = {
@@ -36,4 +39,16 @@ export class CoursesComponent implements OnInit {
   pageChanged(event) {
     this.config.currentPage = event;
   }
+
+  //parse data course to course in modal to delete course in modal
+  parseData(c: Course) {
+    this.courseDelete = c;
+  }
+
+  // // check course to delete
+  // checkC(course: Course){
+  //   alert(course.id)
+  //   console.log(course)
+  // }
+
 }

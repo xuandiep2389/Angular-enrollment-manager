@@ -1,25 +1,63 @@
 <div class="container">
+
+
   <br>
   <div class="form-group">
     <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
   </div>
   <table class="table" >
     <tr class="table-title">
-      <td>Course</td>
+      <td>Course id</td>
       <td>Name</td>
       <td>Description</td>
     </tr>
     <tr *ngFor="let c of courses | filter:searchText | paginate: config">
+
       <td>{{c.id}}</td>
       <td>{{c.name}}</td>
       <td>{{c.description}}</td>
 
       <td><a class="btn btn-outline-warning" routerLink="/courses/view/{{c.id}}">View</a></td>
       <td><a class="btn btn-outline-info" routerLink="/courses/detail/{{c.id}}">Edit</a></td>
-      <td><button class="btn btn-outline-danger" (click)="delete(c)">Delete</button></td>
+      <td><button class="btn btn-outline-danger" (click)="parseData(c)" data-toggle="modal" data-target="#myModal">Delete</button></td>
+
+
+      <!-- The Modal -->
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Delete course</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              There are still students enrolled in this course, are you sure to delete ?
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-info" data-dismiss="modal">No</button>
+<!--              <a class="btn btn-warning" data-dismiss="modal" routerLink="/courses/view/{{courseDelete.id}}">View detail</a>-->
+              <button type="button" class="btn btn-danger" data-dismiss="modal" (click)=delete(courseDelete)>Yes</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
     </tr>
   </table>
   <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
   <br>
   <a class="btn btn-outline-secondary" routerLink="/courses/add">Add course</a>
+
+
 </div>
+
+
