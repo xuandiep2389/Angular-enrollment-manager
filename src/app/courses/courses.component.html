@@ -9,7 +9,7 @@
       <td>Name</td>
       <td>Description</td>
     </tr>
-    <tr *ngFor="let c of courses | filter:searchText">
+    <tr *ngFor="let c of courses | filter:searchText | paginate: config">
       <td>{{c.id}}</td>
       <td>{{c.name}}</td>
       <td>{{c.description}}</td>
@@ -19,5 +19,7 @@
       <td><button class="btn btn-outline-danger" (click)="delete(c)">Delete</button></td>
     </tr>
   </table>
+  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+  <br>
   <a class="btn btn-outline-secondary" routerLink="/courses/add">Add course</a>
 </div>

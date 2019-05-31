@@ -10,8 +10,14 @@ import {Course} from '../Course';
 })
 export class EnrollmentsComponent implements OnInit {
   enrollments: Enrollment[];
+  config: any;
 
-  constructor(private enrollmentService: EnrollmentService) { }
+  constructor(private enrollmentService: EnrollmentService) {
+    this.config = {
+      itemsPerPage: 4,
+      currentPage: 1,
+    };
+  }
 
   ngOnInit() {
     this.getEnrollments();
@@ -24,5 +30,9 @@ export class EnrollmentsComponent implements OnInit {
   delete(enrollment: Enrollment):void {
     this.enrollments = this.enrollments.filter(e => e !== enrollment);
     this.enrollmentService.deleteEnrollment(enrollment).subscribe()
+  }
+
+  pageChanged(event) {
+    this.config.currentPage = event;
   }
 }

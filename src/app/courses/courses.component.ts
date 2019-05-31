@@ -10,8 +10,14 @@ import {Student} from '../Student';
 })
 export class CoursesComponent implements OnInit {
   courses: Course[];
+  config: any;
 
-  constructor(private courseService: CourseService) { }
+  constructor(private courseService: CourseService) {
+    this.config = {
+      itemsPerPage: 4,
+      currentPage: 1,
+    };
+  }
 
   ngOnInit() {
     this.getCourses();
@@ -25,5 +31,9 @@ export class CoursesComponent implements OnInit {
   delete(course: Course):void {
     this.courses = this.courses.filter(s => s !== course);
     this.courseService.deleteCourse(course).subscribe()
+  }
+
+  pageChanged(event) {
+    this.config.currentPage = event;
   }
 }
