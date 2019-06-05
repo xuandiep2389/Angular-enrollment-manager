@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Course} from '../Course';
 import {CourseService} from '../course.service';
 import {Location} from '@angular/common';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -17,7 +18,8 @@ export class AddCourseComponent implements OnInit {
 
   constructor(private fb:FormBuilder,
               private courseService: CourseService,
-              private location: Location) {
+              // private location: Location,
+              private route: Router) {
     this.createForm();
   }
 
@@ -45,11 +47,11 @@ export class AddCourseComponent implements OnInit {
         )
       });
       alert("Add course success");
-      this.goBack();
+      this.route.navigate(['/courses']);
     }
   }
 
-  goBack():void {
-    this.location.back();
-  }
+  // goBack():void {
+  //   this.location.back();
+  // }
 }

@@ -7,6 +7,7 @@ import {Course} from '../Course';
 import {EnrollmentService} from '../enrollment.service';
 import {StudentsService} from '../students.service';
 import {CourseService} from '../course.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-enrollment',
@@ -21,9 +22,10 @@ export class AddEnrollmentComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private enrollmentService: EnrollmentService,
-              private location: Location,
+              // private location: Location,
               private studentService: StudentsService,
-              private courseService: CourseService) {
+              private courseService: CourseService,
+              private route: Router) {
     this.createForm();
   }
 
@@ -71,13 +73,13 @@ export class AddEnrollmentComponent implements OnInit {
         )
       });
       alert("Add enrollment success");
-      this.goBack();
+      this.route.navigate(['/enrollments']);
     }
   }
 
-  goBack():void {
-    this.location.back();
-  }
+  // goBack():void {
+  //   this.location.back();
+  // }
 
   now = new Date();
 

@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {StudentsService} from '../students.service';
 import {Student} from '../Student';
 import {Location} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-student',
@@ -14,7 +15,8 @@ export class AddStudentComponent implements OnInit {
   students: Student[];
   constructor(private fb: FormBuilder,
               private studentService: StudentsService,
-              private location: Location) {
+              // private location: Location,
+              private route: Router) {
     this.createForm();
   }
 
@@ -40,7 +42,7 @@ export class AddStudentComponent implements OnInit {
         )
       });
       alert("Add student success");
-      this.goBack();
+      this.route.navigate(['/students']);
     }
   }
 
@@ -48,7 +50,7 @@ export class AddStudentComponent implements OnInit {
     this.studentService.getStudents().subscribe(students => this.students = students)
   }
 
-  goBack():void {
-    this.location.back();
-  }
+  // goBack():void {
+  //   this.location.back();
+  // }
 }
